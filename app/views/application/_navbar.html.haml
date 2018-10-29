@@ -1,18 +1,32 @@
 %li{ class: navbar_class(:home) }
   = link_to('Home', :pages_home)
 
-%li{ class: navbar_class(:users) }
-  = link_to('Users', :users)
-
-%li{ class: navbar_class(:teams) }
-  = link_to('Teams', :teams)
-
 %li{ class: navbar_class(:forums) }
   = link_to('Forums', :forums)
 
-%li{ class: navbar_class(:leagues) }
-  = link_to('Leagues', :leagues)
+%li.dropdown
+  %a.dropdown-toggle{ role: :button, data: { toggle: :dropdown } }
+    League
+    %span.caret
+
+  %ul.dropdown-menu
+    %li{ class: navbar_class(:leagues) }
+      = link_to('Seasons', :leagues)
+
+    %li{ class: navbar_class(:teams) }
+      = link_to('Teams', :teams)
+
+    %li{ class: navbar_class(:users) }
+      = link_to('Users', :users)
+
+%li.dropdown
+  %a.dropdown-toggle{ role: :button, data: { toggle: :dropdown } }
+    Help
+    %span.caret
+
+  %ul.dropdown-menu
+    %li= link_to('Support', '/forums/topics/2')
 
 - if user_signed_in? && current_user.admin?
   %li{ class: navbar_class(:admin) }
-    = link_to('Admin', :admin)
+    = link_to('Dashboard', :admin)

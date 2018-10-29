@@ -1,16 +1,18 @@
 - if @topic
-  %h1 News
+  %h1 Latest News Posts
+  %br
 
   - @threads.each do |thread|
-    - post = @news_posts[thread]
-    %hr
+    .news-post
+      - post = @news_posts[thread]
+      %br
 
-    = render 'forums/posts/news_post', post: post
+      = render 'forums/posts/news_post', post: post
 
   - if @more_threads
-    = link_to 'View Older', forums_topic_path(@topic), class: 'btn btn-default'
+    = link_to 'View Older Posts', forums_topic_path(@topic), class: 'btn btn-default'
 - else
   .jumbotron
-    %h1 Welcome to Citadel
+    %h1 Welcome to the PURE League website!
 
-    %p View the source on #{link_to 'Github', 'https://github.com/ozfortress/citadel'}
+    %p If you are reading this, please let us know!

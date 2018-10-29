@@ -13,12 +13,12 @@
 %h1= @league.name
 
 .panel.panel-default
-  .panel-heading Info
+  .panel-heading Season Information
   .panel-body.markdown= present(@league).description
 
 - matches = @personal_matches || @top_div_matches
 - if !matches.empty?
-  .panel.panel-info
+  .panel.panel-default
     = link_to 'All Matches', league_matches_path(@league),
               class: 'btn btn-default pull-right'
     .panel-heading
@@ -30,17 +30,18 @@
 
 - else
   .alert.alert-info
-    = link_to 'All Matches', league_matches_path(@league),
-              class: 'btn btn-default pull-right'
-    - if @league.completed?
-      This league has been completed
-    - elsif @roster
-      There are no upcoming matches for your team, #{present(@roster).link}
-    - else
-      There are no upcoming matches for #{@divisions.first.name}
+    .fix
+      = link_to 'All Matches', league_matches_path(@league),
+                class: 'btn btn-default pull-right'
+      - if @league.completed?
+        This league has been completed
+      - elsif @roster
+        There are no upcoming matches for your team, #{present(@roster).link}
+      - else
+        There are no upcoming matches for #{@divisions.first.name}
 
 .panel.panel-default
-  .panel-heading Teams
+  .panel-heading Participating Teams
   - if user_signed_in?
     - if current_user.can?(:edit, :team) && @league.signuppable?
       .panel-body
@@ -89,8 +90,8 @@
           = render 'leagues/divisions/bracket', division: div, rosters: rosters, matches: matches
 
 - if user_can_edit_league?
-  .panel.panel-info
-    .panel-heading Admin
+  .panel.panel-default
+    .panel-heading Season Control Panel
     .panel-body
       - klass = 'btn btn-default pull-right'
 

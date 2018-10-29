@@ -17,7 +17,7 @@
   .panel-body.markdown= team_p.description
 
 - if team_p.notice != ''
-  .panel.panel-warning
+  .panel.panel-default
     .panel-heading Notice
     .panel-body.markdown= team_p.notice
 
@@ -59,7 +59,7 @@
             = render 'users/listing', user: @users[id], team: @team
 
       - if roster_p.notice != ''
-        .panel-warning
+        .panel-default
           .panel-heading
             Notice
 
@@ -165,7 +165,7 @@
                 = render 'users/listing', user: @users[user_id], team: @team
 
           - if roster_p.notice != ''
-            .panel-warning
+            .panel-default
               .panel-heading Notice
               .panel-body.markdown= roster_p.notice
 

@@ -1,14 +1,14 @@
 - content_for(:title) { 'Admin' }
 
-%h2 For all your admin needs
+%h2 For all your Administrative desires.
 
 - if current_user.can?(:edit, :leagues)
   .panel.panel-default
-    .panel-heading Leagues
+    .panel-heading Seasons
     .panel-body
       = link_to new_league_path, class: 'btn btn-default' do
         %span.glyphicon.glyphicon-plus
-        Create New League
+        Create New Season
     %ul.list-group
       - leagues.order(created_at: :desc).each do |league|
         = link_to league.name, league_path(league), class: 'list-group-item'

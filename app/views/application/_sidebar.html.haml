@@ -1,3 +1,16 @@
+- if user_signed_in? && current_user.admin?
+  .panel.panel-default
+    .panel-heading Admin Panel
+    %ul.list-group
+      %li.list-group-item
+        %a{:href => "/admin"} 
+          Control Panel
+      %li.list-group-item
+        %a{:href => "/forums/topics/1"}
+          Make a News Post
+      %li.list-group-item
+        %a{:href => "/users/names"}
+          Name Change Requests
 .panel.panel-default
   .panel-heading External Links
   %ul.list-group

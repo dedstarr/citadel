@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_231149) do
+ActiveRecord::Schema.define(version: 2018_10_28_130828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -628,6 +628,7 @@ ActiveRecord::Schema.define(version: 2018_10_10_231149) do
     t.string "avatar_token"
     t.integer "forums_posts_count", default: 0, null: false
     t.integer "public_forums_posts_count", default: 0, null: false
+    t.string "time_zone", default: "Australia/Brisbane", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["query_name_cache"], name: "index_users_on_query_name_cache", opclass: :gist_trgm_ops, using: :gist

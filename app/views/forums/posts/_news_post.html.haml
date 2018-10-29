@@ -1,14 +1,12 @@
 - post_p = present(post)
 
 %div{ id: "post_#{post.id}" }
+
+%h2= link_to post.thread.title, forums_thread_path(post.thread)
 - if user_can_edit_post?(post)
   .pull-right
     = link_to post_p.edit_path, class: 'btn btn-link btn-sm' do
       %span.glyphicon.glyphicon-cog
-.pull-right
-  = post_p.created_at
-
-%h2= link_to post.thread.title, forums_thread_path(post.thread)
 
 - if user_can_edit_post?(post) && post.edits.size > 1
   .pull-right
@@ -19,3 +17,6 @@
   .container-fluid.markdown= post_p.content
   - comments_count = post.thread.posts_count - 1
   .pull-right= link_to "comments (#{comments_count})", forums_thread_path(post.thread)
+  .pull-left
+    .date
+      = post_p.created_at

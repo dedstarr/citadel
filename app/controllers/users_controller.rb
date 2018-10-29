@@ -131,7 +131,7 @@ class UsersController < ApplicationController
   end
 
   def new_user_params
-    params.require(:user).permit(:name, :avatar, :description, :email)
+    params.require(:user).permit(:name, :avatar, :description, :email, :time_zone)
           .merge(steam_id: steam_data['uid'])
   end
 

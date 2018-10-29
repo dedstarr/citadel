@@ -9,8 +9,6 @@
 
       = f.markdown_editor :notice, row: 3, label: 'Notice (Only visible for user)'
 
-= f.text_field :email, label: user_p.confirmation_label
-
 .clearfix
   = image_tag user.avatar.icon.url, class: 'pull-left thumbnail' if user.avatar?
 
@@ -18,6 +16,7 @@
   = f.hidden_field :avatar_cache
   - if user.avatar.file
     = f.check_box :remove_avatar
+  = f.time_zone_select :time_zone
 
 = f.markdown_editor :description, rows: 10
 

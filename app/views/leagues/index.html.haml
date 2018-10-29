@@ -1,11 +1,12 @@
 - content_for(:title) { 'Leagues' }
 
-%h1.tab-header Leagues
+%h1.tab-header Seasons
 
 .col-sm-3.col-md-3.searchbox.pull-right
   = render 'search'
 
-%hr
+%br
+%br
 
 - if user_can_edit_leagues?
   = link_to new_league_path, class: 'btn btn-default pull-right' do

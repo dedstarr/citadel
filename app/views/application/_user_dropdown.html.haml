@@ -4,7 +4,7 @@
 %ul.navbar-right-menu.dropdown-menu#navbar-user-dropdown
   - present_collection(current_user.teams).each do |team_p|
     %li= team_p.link
-  %hr.divider
+  %br
   %li= link_to('Profile', user_path(current_user))
   %li= link_to('Settings', edit_user_path(current_user))
   %li= link_to('Logout', logout_user_path)

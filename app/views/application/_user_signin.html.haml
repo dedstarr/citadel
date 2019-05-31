@@ -1,1 +1,5 @@
-= link_to(image_tag('steam/login.png'), user_steam_omniauth_authorize_path, id: 'login')
+%li.steam-green
+  %a{:href => user_steam_omniauth_authorize_path, :id => 'login'}
+    %em.fab.fa-steam
+    &nbsp;
+    SIGN IN

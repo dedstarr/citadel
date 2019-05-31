@@ -3,6 +3,10 @@ class PagesController < ApplicationController
     read_news_config
   end
 
+  def news
+    read_news_config
+  end
+
   private
 
   def read_news_config

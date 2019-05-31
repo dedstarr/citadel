@@ -1,0 +1,11 @@
+- post_p = present(post)
+
+.shortnews-post.container-fluid.markdown
+  .shortnews-header
+    %div{ id: "post_#{post.id}" }
+    .pull-right
+      = post_p.created_at
+
+    %h3= link_to post.thread.title, forums_thread_path(post.thread)
+    
+  .shortnews-content= post_p.content

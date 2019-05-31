@@ -1,16 +1,20 @@
-- if @topic
-  %h1 News
+.hero-container.home-content
+  = video_tag("encoded.mp4", :controls => false, :autobuffer => true, :autoplay => true, :loop => true, :id => "hero-video")
 
-  - @threads.each do |thread|
-    - post = @news_posts[thread]
-    %hr
+.home-push
+  - if @topic
+    %h1.page-title LATEST NEWS
 
-    = render 'forums/posts/news_post', post: post
+    - @threads.each do |thread|
+      - post = @news_posts[thread]
+      %br
 
-  - if @more_threads
-    = link_to 'View Older', forums_topic_path(@topic), class: 'btn btn-default'
-- else
-  .jumbotron
-    %h1 Welcome to Citadel
+      = render 'forums/posts/shortnews_post', post: post
 
-    %p View the source on #{link_to 'Github', 'https://github.com/ozfortress/citadel'}
+    - if @more_threads
+      = link_to 'View Older', forums_topic_path(@topic), class: 'btn btn-default'
+  - else
+    .jumbotron
+      %h1 Welcome to Citadel
+
+      %p View the source on #{link_to 'Github', 'https://github.com/ozfortress/citadel'}

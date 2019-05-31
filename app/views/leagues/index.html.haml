@@ -1,16 +1,11 @@
 - content_for(:title) { 'Leagues' }
 
-%h1.tab-header Leagues
+%h1.page-title Leagues & Tournaments
 
 .col-sm-3.col-md-3.searchbox.pull-right
   = render 'search'
 
-%hr
-
-- if user_can_edit_leagues?
-  = link_to new_league_path, class: 'btn btn-default pull-right' do
-    %span.glyphicon.glyphicon-plus
-    Create New League
+%br
 
 - unless @games.empty?
   %ul.nav.nav-tabs
@@ -32,3 +27,7 @@
         .panel-body No leagues found...
       - else
         = render 'league_list', leagues: leagues, game: game
+      - if user_can_edit_leagues?
+        = link_to new_league_path, class: 'btn btn-default pull-right' do
+          %span.glyphicon.glyphicon-plus
+          Create New League

@@ -1,18 +1,68 @@
-%li{ class: navbar_class(:home) }
-  = link_to('Home', :pages_home)
+.navbrand
+  = image_tag 'SiteBrand.png', height: '38px'
 
-%li{ class: navbar_class(:users) }
-  = link_to('Users', :users)
+%li
+  %a{:href => "/"}
+    HOME
 
-%li{ class: navbar_class(:teams) }
-  = link_to('Teams', :teams)
+%li
+  %a{:href => "/news"}
+    NEWS
 
-%li{ class: navbar_class(:forums) }
-  = link_to('Forums', :forums)
+%li
+  %a{:href => "/forums"}
+    FORUMS
 
-%li{ class: navbar_class(:leagues) }
-  = link_to('Leagues', :leagues)
+%li
+  %a{:href => "/leagues"}
+    LEAGUES & TOURNAMENTS
 
-- if user_signed_in? && current_user.admin?
-  %li{ class: navbar_class(:admin) }
-    = link_to('Admin', :admin)
+%li
+  %a{:href => "/teams"}
+    TEAMS
+
+%li
+  %a{:href => "/users"} 
+    USERS
+
+%li.dropdown
+  %a.dropdown-toggle{ role: :button, data: { toggle: :dropdown } }
+    RESOURCES
+    %span.caret
+
+  %ul.dropdown-menu
+    %li
+      %a{:href => "/competitive_rules"}
+        COMPETITIVE RULES
+
+    %li
+      %a{:href => "/community_rules"}
+        COMMUNITY RULES
+
+    %li
+      %a{:href => "/forums/topics/70"} 
+        INFRACTIONS
+
+    %li
+      %a{:href => "/forums/topics/54"} 
+        STAFF LIST
+
+    %li
+      %a{:href => "/forums/topics/55"} 
+        MAP SCHEDULE
+
+    %li
+      %a{:href => "/forums/topics/56"} 
+        SERVER GUIDE
+
+    %li
+      %a{:href => "/forums/topics/57"} 
+        WEBSITE GUIDE
+
+    %li
+      %a{:href => "https://patreon.com/respawnleague"}
+        PATREON
+
+    - if user_signed_in? && current_user.admin?
+      %li{ class: navbar_class(:admin) }
+        = link_to('CONTROL PANEL', :admin)

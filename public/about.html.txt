@@ -1,0 +1,21 @@
+<div id="doc" class="markdown-body container-fluid" style="position: relative;"><h1 id="About">About</h1><br />
+	<p>The Respawn League was started with Highlander as it's primary competitive format, out of discontent with the Highlander scene at the time. Respawn League aims to provide a engaging and youthful approach to Highlander, by utilising the Citadel project to bring a proven platform to provide league operations to the end users. There are three seasons per year, with each season having badges for participants. While currently only supporting Australia and New Zealand, Asia support will be introduced at the start of 2019, with the first season of RLHL Asia commencing sometime after February.</p><br />
+	<a href="/rules"><button class="nav-btn">Competitive Rules</button></a>
+	<a href="/community_rules"><button class="nav-btn">Community Rules</button></a>
+	<a href="/staff"><button class="nav-btn">Current Staff List</button></a>
+	<a href="/map_schedule"><button class="nav-btn">Map Schedule</button></a>
+	<a href="/credits"><button class="nav-btn">Credits</button></a>
+</div>
+<style>
+	.nav-btn {
+		background-color: #293849;
+		border-radius: 0px;
+		border: none;
+		border-bottom: 1px solid #5FCCB4;
+		padding: 10px;
+		display: inline;
+		margin-right: 30px;
+		margin-bottom: 10px;
+		width: 160px;
+	}
+</style>

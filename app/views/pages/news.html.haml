@@ -1,0 +1,16 @@
+%h1.page-title RESPAWN LEAGUE NEWS
+- if @topic
+
+  - @threads.each do |thread|
+    - post = @news_posts[thread]
+    %br
+
+    = render 'forums/posts/news_post', post: post
+
+  - if @more_threads
+    = link_to 'View Older', forums_topic_path(@topic), class: 'btn btn-default'
+- else
+  .jumbotron
+    %h1 Oh no, looks like you found an error!
+
+    %p Please inform a staff member in our Discord!

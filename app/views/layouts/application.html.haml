@@ -4,7 +4,17 @@
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
     - viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
     %meta{ name: 'viewport', content: viewport }
-    %title= (content_for :title) || 'citadel'
+    %meta{ content: 'Non-Standard Competitive Team Fortress 2 Gamemodes for Australia, New Zealand and Asia!', 'property' => 'description' }
+    %meta{ content: 'Non-Standard Competitive Team Fortress 2 Gamemodes for Australia, New Zealand and Asia!', 'property' => 'og:description' }
+    %meta{ content: 'play.respawnleague.com', 'property' => 'og:site_name' }
+    %meta{ content: 'en_US', 'property' => 'og:locale' }
+    %meta{ content: 'Non-Standard Competitive Team Fortress 2 Gamemodes for Australia, New Zealand and Asia!', 'name' => 'twitter:description' }
+    %meta{ content: 'https://play.respawnleague.com', 'name' => 'twitter:url' }
+    %meta{ content: 'Respawn League', 'name' => 'twitter:title' }
+    %meta{ content: '/images/logo.jpg', 'name' => 'twitter:image' }
+    %meta{ content: "#293848", :name => "theme-color" }
+
+    %title= (content_for :title) || 'Respawn League'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = content_for :head
@@ -12,43 +22,47 @@
   %body
     %header.hidden-xs.banner-citadel#banner
       .banner-container-citadel
-        .banner-background-citadel
-          = image_tag 'background2.png'
         .banner-logo-citadel
-          = link_to pages_home_path do
-            = image_tag 'logo.png'
+          .container
+            %ul= render 'navbar'
 
-    %nav.navbar.navbar-citadel.affix-top#navbar{ role: 'navigation',
-                                                 data: { spy: 'affix',
-                                                         'offset-top' => 106 } }
-      .container
-        .row
-          - if user_signed_in?
-            %ul.nav.navbar-header.navbar-right
-              %li= render 'user_dropdown'
-            %ul.nav.navbar-header.navbar-right
-              %li= render 'notifications', notifications: @notifications
-          - else
-            %ul.nav.navbar-header.navbar-right
-              %li= render 'user_signin'
+    %nav.navbar.navbar-citadel.navbar-fixed-top#navbar{ role: 'navigation' }
+      .row
+        %button.navbar-toggle.collapsed.navbar-left{ type: 'button',
+                                                      data: { toggle: 'collapse',
+                                                              target: '#navbar-collapse' } }
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
 
-          %button.navbar-toggle.collapsed.navbar-left{ type: 'button',
-                                                       data: { toggle: 'collapse',
-                                                               target: '#navbar-collapse' } }
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
+        .visible-xs.pull-left.banner-logo-citadel
+          = image_tag 'RSL_Brand.png', height: '80px'
 
-          .visible-xs.pull-left.banner-logo-citadel
-            = image_tag 'logo.png', height: '50px'
+        .collapse.navbar-collapse.navbar-left#navbar-collapse
+          %ul.nav.navbar-nav= render 'navbar'
 
-          .collapse.navbar-collapse.navbar-left#navbar-collapse
-            %ul.nav.navbar-nav= render 'navbar'
+        - if user_signed_in?
+          %ul.nav.navbar-header.navbar-right
+            %li= render 'user_dropdown'
+          %ul.nav.navbar-header.navbar-right
+            %li= render 'notifications', notifications: @notifications
 
+        - else
+          .navbar-right
+            %ul.nav.navbar-nav= render 'user_signin'
+
+    %br
+    %br
+    %br
+    %br
+    %br
     .container#content
       .row
-        .col-md-9
-          = render 'flashes'
-          = yield
-        .col-md-3
-          = render 'sidebar'
+      %br
+        = render 'flashes'
+        = yield
+
+    #footer.center
+      .container
+        .row
+          = render 'footer'

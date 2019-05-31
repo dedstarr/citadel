@@ -1,0 +1,588 @@
+$base-dark: #1f2a38
+$base-light: #293848
+$base-accent: #5eccb4
+$font-header: 'Roboto Condensed', sans-serif
+$font-normal: 'Roboto', sans-serif
+
+html
+  overflow-y: scroll
+
+body
+  background-image: url(background.jpg)
+  background-position-x: 0px
+  background-position-y: 0px
+  background-size: initial
+  background-repeat-x: initial
+  background-repeat-y: initial
+  background-attachment: initial
+  background-origin: initial
+  background-clip: initial
+  background-color: rgb(13, 13, 13)
+  overflow-x: hidden
+  font-family: $font-normal
+  color: #fff
+
+blockquote
+  font-size: 14px
+
+.center
+  text-align: center
+  margin: auto
+
+.jumbotron
+  color: #fff
+  background-color: rgba(0, 0, 0, 0.7)
+  border-radius: 0px
+
+h1
+  font-family: $font-header
+  text-transform: uppercase
+
+h2
+  font-family: $font-header
+  text-transform: uppercase
+
+h3
+  font-family: $font-header
+  text-transform: uppercase
+
+h4
+  font-family: $font-header
+  text-transform: uppercase
+
+h5
+  font-family: $font-header
+  text-transform: uppercase
+
+#footer
+  background: black
+  padding: 50px
+  position: relative
+  margin-top: 80px
+  bottom: 0
+  width: 100%
+
+.shortnews-post
+  background: black
+  border: 1px solid $base-light
+  height: 218px
+
+.shortnews-header
+  border-bottom: 1px solid $base-light
+  color: #fff
+
+.shortnews-content
+  color: #fff
+  height: 110px
+  overflow: hidden
+  margin-top: 20px
+
+.news-post
+  background: black
+  border: 1px solid $base-light
+
+.news-header
+  color: #fff
+  border-bottom: 1px solid $base-light
+
+.news-content
+  color: #fff
+  margin-top: 20px
+
+.steam-green a:hover
+  color: #7da10e
+
+.navbrand
+  display: inline
+  float: left
+  border-right: 1px solid $base-dark
+  margin-top: 6px
+  margin-right: 14px
+
+a
+  color: $base-accent
+
+a:hover
+  text-decoration: none
+
+.page-title
+  color: #fff
+  text-align: center
+  font-size: 64px
+
+.dropdown-menu
+  background: black
+  border-radius: 0px
+  padding: 4px
+  padding-top: 16px
+  padding-bottom: 16px
+  border-bottom: 1px solid $base-light
+
+.dropdown-menu li a
+  color: #fff
+  font-size: 14px
+
+.dropdown-menu li a:hover
+  color: $base-accent
+  background: black
+
+.banner-citadel
+  background-color: #C9C9C9
+  display: none
+
+.banner-container-citadel
+  @extend .container
+  position: relative
+  left: 0
+  top: 0
+
+.banner-logo-citadel
+  position: relative
+  left: 0
+  top: -14px
+  display: none
+
+.banner-background-citadel
+  position: absolute
+  right: 0
+  top: 0
+
+.hero-container
+  width: 100%
+  height: 70%
+  z-index: 98
+  background-color: $base-light
+  overflow: hidden
+  margin-top: 64px
+
+#hero-video
+  min-width: 100%
+  min-height: 100%
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+#navbar.navbar-citadel
+  @extend .navbar-inverse
+  background-color: #000
+  border-radius: 0px
+  border-bottom: 1px solid $base-light
+  padding: 6px
+  font-size: 16px
+  color: #fff
+  font-family: $font-header
+
+.links
+  color: #fff
+
+.home-content
+  left: 0
+  position: absolute
+  top: 0
+
+.home-push
+  margin-top: 60%
+
+#navbar
+  max-height: 100%
+  color: #fff
+
+#navbar.affix
+  top: 0
+  width: 100%
+  z-index: 100
+
+.affix + .container
+  padding-top: 78px
+
+@media (max-width: 768px)
+  .navbar-toggle
+    float: left
+    margin-right: 5px
+  .navbar-right
+    float: right
+  #content
+    padding-top: 78px
+  #navbar-collapse
+    width: 100%
+    max-height: 320px
+    overflow-y: auto
+  .affix-top
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 100
+  .navbrand
+    display: none
+  .container
+    padding-left: 5px
+    padding-right: 5px
+
+  [class*="col-md"]
+    padding-left: 5px
+    padding-right: 5px
+
+textarea
+  resize: vertical
+
+li.list-group-item
+  border-radius: 0
+  line-height: 34px
+  background-color: #0f0f0f
+  color: #fff
+
+.list-group-item
+  border-radius: 0
+
+.list-group-item-info
+  background-color: black
+  border-radius: 0
+  border: 1px solid $base-dark
+
+.list-group-item-info:hover
+  background-color: black
+  border-radius: 0
+  border: 1px solid $base-dark
+
+ul.list-group
+  background-color: transparent
+  color: #fff
+
+.row
+  margin-left: 0
+  margin-right: 0
+
+a#login
+  padding-top: 11.8px
+
+.navbar-right-menu
+  right: 0
+  left: auto
+
+.navbar-header a.dropdown-toggle
+  // from navbar-nav
+  color: $base-accent
+  background-color: transparent
+
+.navbar-header > li > a:hover, .navbar-header > li > a:focus, .navbar-header .open > a
+  color: white
+  background-color: transparent !important
+
+.heading
+  color: #fff
+
+#notifications
+  position: relative
+  padding-left: 0
+  padding-top: 16px
+  padding-bottom: auto
+  color: #fff
+
+#notifications:hover
+  color: $base-accent
+
+#notifications-glyph
+  font-size: 1.8em
+
+#notifications-badge
+  position: absolute
+  top: 5px
+  right: 5px
+  background: $base-dark
+  color: $base-accent
+  font-family: $font-normal
+  font-size: 16px
+
+#notifications-dropdown
+  width: 400px
+  @media (max-width: 768px)
+    position: fixed
+    top: 55px
+    width: 100%
+
+#notifications-list
+  margin-bottom: 0
+  margin-top: 2px
+  overflow-y: auto
+  max-height: 205px
+  color: #fff
+  background-color: transparent
+
+.notification
+  border-radius: 0 !important
+  // margin-top: -0.333333px
+  padding-top: 5px
+  padding-bottom: 5px
+  background-color: #e7e7e7
+
+.notification-read
+  background-color: white
+
+.notification-group
+  background-color: transparent
+  color: #fff
+
+.notification-button
+  position: relative
+  z-index: 100
+  padding: 4px 6px 4px 6px
+  background-color: transparent
+
+  &:hover
+    color: grey
+
+#navbar-user
+  padding-left: 5px
+  padding-right: 5px
+  // from navbar-nav > li > a
+  padding-top: 15px
+  padding-bottom: 15px
+
+#navbar-user-dropdown
+
+.panel
+  border-radius: 0
+  background-color: black
+  border: 1px solid $base-dark
+
+.panel-default .panel-heading
+  border-radius: 0
+  background-color: black
+  color: #fff
+  border-top: none
+  border-left: none
+  border-right: none
+  border-bottom: 1px solid $base-dark
+
+.panel-heading
+  text-transform: uppercase
+
+.panel-heading a
+  color: #fff
+
+.form-control
+  border-radius: 0
+  border: 1px solid $base-dark
+  background-color: #0f0f0f
+  color: #fff
+
+.btn
+  background-color: #0f0f0f
+  color: #fff
+  border-radius: 0
+  border: 1px solid $base-light
+  text-transform: uppercase
+
+.btn-default
+  background-color: #0f0f0f
+  color: #fff
+  border-radius: 0
+  border: 1px solid $base-light
+  text-transform: uppercase
+
+.btn-sm
+  background-color: #0f0f0f
+  color: #fff
+  border-radius: 0
+  border: 1px solid $base-light
+  text-transform: uppercase
+
+.btn:hover
+  background: #0f0f0f
+  color: $base-accent
+  border: 1px solid $base-light
+
+.btn-default:hover
+  background: #0f0f0f
+  color: $base-accent
+  border: 1px solid $base-light
+
+.btn-sm:hover
+  background: #0f0f0f
+  color: $base-accent
+  border: 1px solid $base-light
+
+.alert-success
+  border-radius: 0px
+  color: black
+  text-transform: uppercase
+
+.alert-warning
+  border-radius: 0px
+  color: black
+  text-transform: uppercase
+
+.alert-danger
+  border-radius: 0px
+  color: black
+  text-transform: uppercase
+
+.alert-info
+  border-radius: 0px
+  color: black
+  text-transform: uppercase
+
+.nav-tabs
+  display: none
+
+.spaced-header
+  letter-spacing: 3px
+  margin: 0 5px
+  display: inline-flex
+
+.user-details
+  padding-left: 45px
+  height: 34px
+  line-height: 19px
+  overflow: visible
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.steam-link a
+  color: #06ace2
+  font-family: monospace
+  font-size: x-small
+  text-decoration: none
+  padding: 0 10px 0 0
+
+  .glyphicon:before
+    margin-right: 3px
+
+.avatar
+  border: #e8e5dc 1px solid
+
+.group-avatar
+  margin: 3px 8px
+  max-height: 77px
+  border: 2px #bfb1b3 solid
+
+.group-title
+  margin-top: 3px
+
+  h2
+    display: inline
+  div
+    vertical-align: text-top
+
+.group-aka
+  margin-bottom: 6px
+  font-style: italic
+  color: #8ba0b5
+  font-size: small
+
+.steam-id-large
+  font-family: monospace
+  text-align: right
+  background-color: #695d5d
+  color: white
+  padding: 2px 5px
+  border-radius: 4px
+
+.steam-link-large
+  // font-family: monospace
+  text-align: right
+  margin-top: -21px
+
+  a
+    @extend .steam-id-large
+
+    .glyphicon:before
+      margin-right: 5px
+
+.spaced-letters
+  letter-spacing: 2px
+  margin: 0
+
+// AVATAR ICONS
+.icon-small
+  font-size: small
+  margin-right: -6px
+  color: #a3acb1
+
+.icon-xxsmall
+  font-size: smaller
+  margin-right: -6px
+  color: #a3acb1
+
+\:target:before
+  z-index: 0
+  display: block
+  content: " "
+  margin-top: -75px
+  height: 75px
+  visibility: hidden
+
+.tab-header
+  display: inline-flex
+  margin: 0
+
+.searchbox
+  margin-top: 5px
+
+.matches-table
+  overflow: auto
+  border-left: none
+  border-right: none
+  margin-bottom: 0
+
+.matches-table td
+  padding: 4px 8px !important
+  vertical-align: middle
+
+.match-round
+  width: 60px
+  font-size: 0.85em
+  text-align: left
+
+.match-home-team
+  text-align: right
+
+.match-vs
+  text-align: center
+  width: 60px
+  font-family: monospace
+
+.match-away-team
+  text-align: left
+
+.match-view
+  width: 50px
+  font-size: 0.85em
+  text-align: left
+
+.round-score
+  display: inline-block
+  float: right
+  width: 70px
+  text-align: center
+  border-left: 1px solid white
+  line-height: calc(100% + 2px)
+  outline: 1px solid white
+  background-color: #d9d9d9
+  border-radius: 15px
+
+.round-score div
+  display: inline-block
+  width: 20px
+  height: 20px
+  line-height: 20px
+  border-radius: 50%
+
+.round-won
+  background-color: #89c789
+  color: white
+  border-radius: 10px
+
+.round-loss
+  background-color: #f16161
+  color: white
+  border-radius: 10px
+
+.round-tied
+  //background-color: white
+  border-radius: 10px
+
+.nopadding
+  padding: 0 !important
+  margin: 0 !important
